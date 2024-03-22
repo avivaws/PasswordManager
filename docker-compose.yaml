@@ -1,0 +1,30 @@
+version: '3.9'
+
+volumes:
+  password-manager-mongo-data:
+
+services:
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-container-password-manager
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - password-manager-mongo-data:/data/db
+
+
+  password-manager:
+    build: ./
+    image: avivaws/password-manager:latest
+    hostname: password-manager
+    container_name: password-manager-container
+    ports:
+      - "8080:8080"
+    environment:
+      MONGO_HOST: mongodb-container-password-manager
+      MONGO_PORT: 27017
+      MONGO_DB: password-manager
+    depends_on:
+      - mongodb
