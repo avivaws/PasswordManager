@@ -8,7 +8,9 @@ the server:
   and run them both in a docker container.
   
   the second way is to run a mongoDb server on port 27017.
-  then run mvn compile on the main dir and run the file created.
+  then run mvn compile on the main dir and run the file created this will run the password-manager server on port 8080.
 
 the client:
-  the client is python based, you can run login.py python file but it requires the tkinkter and cryptography packages
+  the client is python based, you can run login.py python file but it requires the tkinkter and cryptography packages.
+  
+  you can as well go into dist dir and run login.exe.
