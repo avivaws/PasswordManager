@@ -16,8 +16,7 @@ services:
 
 
   password-manager:
-    build: ./
-    image: avivaws/password-manager:latest
+    image: avivaws/password-manager-image:latest
     hostname: password-manager
     container_name: password-manager-container
     ports:
